@@ -7,7 +7,14 @@
 // Pushback , Erase, Pop()
 void FilterOnlyEvens(std::vector<int> &a)
 {
-
+    for (int j=0;j<a.size();j++)
+    {
+        if (a[j]%2!=0)
+        {
+            a.erase(a.begin()+j);
+            j-=1;
+        }
+    }
 }
 
 int main()
@@ -22,6 +29,11 @@ int main()
         std::cout<<a<<" ";
     }
     std::vector<int> list;
+    for (int i=0;i<(sizeof(_array)/sizeof(_array[0]));i++)
+    {
+
+        list.push_back(_array[i]);
+    }
     FilterOnlyEvens(list);
     std::cout<<"\n Vector Output :";
     // auto listView
